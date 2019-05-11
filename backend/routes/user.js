@@ -35,7 +35,7 @@ router.post('/register', (req, res) => {
         error: 'user exists'
       });
     } else {
-      //const avatar = 
+      //const avatar =
       const newUser = new User({
         name: req.body.name,
         username: req.body.username,
@@ -53,7 +53,7 @@ router.post('/register', (req, res) => {
         });
       });
     }
-  })
+  });
 });
 
 router.post('/login', (req, res) => {
@@ -67,7 +67,7 @@ router.post('/login', (req, res) => {
       errors,
       isValid
     } = validateloginInput(req.body);
-    if (!isValid) {
+    if (isValid) {
       return res.status(400).json(errors);
     }
 
@@ -76,7 +76,33 @@ router.post('/login', (req, res) => {
       return res.status(400).json(errors);
     }
 
+    bcrypt.compare(password, user.password).then((isMatch) => {
+      if (isMatch) {
+        const payload = {
+          id: user.id,
+          name: user.name
+        };
+        jwt.sign(payload, keys.secretOrkey, {
+          expiresIn: 3600
+        }, (err, token) => {
+          res.json({
+            success: true,
+            token: 'Bearer ' + token
+          });
+        });
+      } else {
+        return res.status(400).json({
+          password: 'password incorrect'
+        });
+      }
+    });
   });
+});
+//check for protected route
+router.get('/current', passport.authenticate('jwt', {
+  session: false
+}), (req, res) => {
+  console.log(req.user);
 });
 
 module.exports = router;

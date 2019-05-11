@@ -6,36 +6,19 @@ const ProfileSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User"
   },
-  experience: [
-    {
-      jobtitle: {
-        type: String,
-        required: true
-      },
-      company: {
-        type: String,
-        required: true
-      },
-      location: {
-        type: String,
-        required: true
-      },
-      from: {
-        type: Date,
-        required: true
-      },
-      to: {
-        type: Date.now
-      },
-      current: {
-        type: Boolean,
-        default: false
-      },
-      description: {
-        type: String
-      }
+  experience: [{
+    jobtitle: {
+      type: String,
+      required: true
+    },
+    company: {
+      type: String,
+      required: true
+    },
+    description: {
+      type: String
     }
-  ],
+  }],
   skills: {
     type: [String],
     required: true

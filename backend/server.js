@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const bodyParser = require("body-parser");
+const passport = require('passport');
 
 const user = require('./routes/user');
+const profile = require('./routes/profile');
 
 const app = express();
 
@@ -25,8 +27,13 @@ mongoose
   });
 
 app.use('/user', user);
+app.use('/profile', profile);
 
 const port = process.env.PORT || 5000;
+
+app.use(passport.initialize());
+
+require('./config/passport')(passport);
 
 app.listen(port, () => {
   console.log("server is up on port " + port);
