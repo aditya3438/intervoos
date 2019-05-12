@@ -44,6 +44,7 @@ export default class VoiceRecorder extends Component {
                 onData={this.onData}
                 strokeColor="#000000"
                 backgroundColor="#FF4081" />
+                <br/>
                 <Button onClick={this.startRecording} variant="contained" color="primary">Start</Button>
                 <Button onClick={this.stopRecording} variant="contained" color="secondary">Stop</Button>
             </div>
