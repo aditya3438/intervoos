@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {Fragment} from 'react';
+import {BrowserRouter, Switch, Route, Link} from 'react-router-dom'
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import Interviews from "../main/interviews"
+import GroupDiscussion from '../main/gd'
+import Stranger from '../main/stranger'
+import TestPrep from '../main/testprep'
 
 const styles = {
   root: {
@@ -24,21 +29,43 @@ class CenteredTabs extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Paper className={classes.root}>
-        <Tabs
-          value={this.state.value}
-          onChange={this.handleChange}
-          indicatorColor="primary"
-          textColor="primary"
-          centered
-        >
-          <Tab label="Interviews" />
-          <Tab label="GD's" />
-          <Tab label="Talk to Strangers" />
-          <Tab label="Test Prep" />
-               
-        </Tabs>
-      </Paper>
+      <BrowserRouter>
+        <div className="App">
+          <Route
+            path="/"
+            render={({ location }) => (
+              <Fragment>
+                <Paper>
+                  <Tabs value={location.pathname}
+                  onChange={this.handleChange}
+                  indicatorColor="primary"
+                  textColor="primary"
+                  centered
+                  >
+                    <Tab label="Interviews" component={Link} to="/interviews" />
+                    <Tab label="GD's" component={Link} to="/gd" />
+                    <Tab
+                      label="Talk to Strangers"
+                      href="#basic-tabs"
+                      component={Link}
+                      to="/stranger"
+                    />
+                    <Tab label="Test Prep" component ={Link} to ="/testprep" />
+                  </Tabs>
+                </Paper>
+                <Switch>
+                  {/* <Route path="/interviews" render={() => <div>Practice Answering Q's for interviews</div>} /> */}
+                  <Route path="/interviews" component= {Interviews} />
+                  <Route path="/gd" component= {GroupDiscussion} />
+                  <Route path="/stranger" component= {Stranger} />
+                  <Route path="/testprep" component= {TestPrep}  />
+                  <Route exact path="/" render={() => <div>Home</div>} />
+                </Switch>
+              </Fragment>
+            )}
+          />
+      </div>
+    </BrowserRouter>
     );
   }
 }
