@@ -15,7 +15,14 @@ class Interviews extends Component{
                 {/* <VoiceRecorder /> */}
                 <br/>
                 {/* <LoginButton /> */}
-                <Grid container spacing={24}>
+                <Grid 
+                  container
+                  spacing={10}
+                  direction="row"
+                  justify="center"
+                  alignItems="center"
+                  style={{ minHeight: '100vh' }}
+                >
                     <Grid item>
                         <SelectedListItem />
                     </Grid>
