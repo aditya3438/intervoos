@@ -2,8 +2,7 @@ import React from "react";
 import {
   FormControl,
   InputLabel,
-  Input,
-  Button
+  Input
 } from "@material-ui/core";
 import LoginButton from  '../authentication/loginButton'
 

@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
-import VoiceRecorder from '../voiceRecorder/voiceRecorder'
-import LoginButton from  '../authentication/loginButton'
+//import VoiceRecorder from '../voiceRecorder/voiceRecorder'
+//import LoginButton from  '../authentication/loginButton'
+import ComplexGrid from '../main/mediaPlayerView'
+import SelectedListItem from './tabList'
+import Grid from '@material-ui/core/Grid';
 
 class Interviews extends Component{
 
@@ -9,9 +12,17 @@ class Interviews extends Component{
         return(
             <div>
                 {/* hello Interviews */}
-                <VoiceRecorder />
+                {/* <VoiceRecorder /> */}
                 <br/>
-                <LoginButton />
+                {/* <LoginButton /> */}
+                <Grid container spacing={24}>
+                    <Grid item>
+                        <SelectedListItem />
+                    </Grid>
+                    <Grid item>
+                        <ComplexGrid />
+                    </Grid>
+                </Grid>
             </div>
         );
     }
