@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 //import VoiceRecorder from '../voiceRecorder/voiceRecorder'
 //import LoginButton from  '../authentication/loginButton'
-import ComplexGrid from '../main/mediaPlayerView'
-import SelectedListItem from './tabList'
+import ComplexGrid from '../reusable components/mediaPlayerView'
+import SelectedListItem from '../reusable components/tabList'
 import Grid from '@material-ui/core/Grid';
+import ProgressTable from '../reusable components/progressTable'
 
 class Interviews extends Component{
 
@@ -27,7 +28,9 @@ class Interviews extends Component{
                         <SelectedListItem />
                     </Grid>
                     <Grid item>
-                        <ComplexGrid />
+                        {/* <ComplexGrid /> */}
+                        <ProgressTable />
+
                     </Grid>
                 </Grid>
             </div>
