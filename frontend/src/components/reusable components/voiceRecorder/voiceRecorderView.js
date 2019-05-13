@@ -5,6 +5,8 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import VoiceRecorder from './voiceRecorder'
 import QuestionStepper from '../questionStepper'
+import TextField from '../textfields/textField'
+
 
 
 const styles = theme => ({
@@ -39,6 +41,9 @@ function VoiceRecorderView(props) {
                     </Grid>
                     <Grid item>
                         <VoiceRecorder />
+                    </Grid>
+                    <Grid item>
+                        <TextField />
                     </Grid>
                 </Grid>
             </Paper>
