@@ -10,13 +10,15 @@ import VoiceRecorder from '../voiceRecorder/voiceRecorder'
 // import "~video-react/styles/scss/video-react";
 // import { Player } from 'video-react';
 import ReactPlayer from 'react-player'
+import QuestionStepper from './questionStepper'
+
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
   },
   paper: {
-    padding: theme.spacing.unit * 20,
+    padding: theme.spacing.unit * 10,
     margin: 'auto',
     maxWidth: 600,
   },
@@ -38,6 +40,9 @@ function ComplexGrid(props) {
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <Grid container spacing={16}>
+          <Grid item xs={12} sm container>
+            <QuestionStepper />
+          </Grid>
           <Grid item>
             {/* <ButtonBase className={classes.image}> */}
               {/* <img className={classes.img} alt="complex" src="/static/images/grid/complex.jpg" /> */}
