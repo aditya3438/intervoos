@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-//import Grid from '@material-ui/core/Grid';
+import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 //import Typography from '@material-ui/core/Typography';
-import ProgressTable from './table';
+import ProgressTable from './progressTable';
+import ProgressBar from './progressBar';
 
 
 const styles = theme => ({
@@ -33,7 +34,14 @@ function ProgressTabView(props) {
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        <ProgressTable />
+        <Grid container spacing={16}>
+          <Grid item xs={12} sm container>
+            <ProgressBar />
+          </Grid>
+          <Grid item xs={12} sm container>
+            <ProgressTable />
+          </Grid>
+        </Grid>
       </Paper>
     </div>
   );

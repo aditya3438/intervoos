@@ -4,7 +4,8 @@ import React, {Component} from 'react'
 import ComplexGrid from '../reusable components/mediaPlayerView'
 import SelectedListItem from '../reusable components/tabList'
 import Grid from '@material-ui/core/Grid';
-import ProgressTable from '../reusable components/progressTable'
+// import ProgressTable from '../reusable components/progressTable'
+import ProgressTabView from '../reusable components/progressTabView'
 
 class Interviews extends Component{
 
@@ -29,7 +30,7 @@ class Interviews extends Component{
                     </Grid>
                     <Grid item>
                         {/* <ComplexGrid /> */}
-                        <ProgressTable />
+                        <ProgressTabView />
 
                     </Grid>
                 </Grid>

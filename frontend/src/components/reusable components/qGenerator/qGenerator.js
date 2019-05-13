@@ -9,7 +9,6 @@ class Generator extends Component{
                 <h1>HELLO</h1>
                 <Button>Click to speak</Button>
             </div>
-
         );
     }
 }
