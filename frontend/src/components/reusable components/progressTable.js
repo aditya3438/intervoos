@@ -20,17 +20,17 @@ const styles = theme => ({
 });
 
 let id = 0;
-function createData(name, questions) {
+function createData(name, number, percent, comments) {
   id += 1;
-  return {name, questions };
+  return { name, number, percent,comments };
 }
 
 const rows = [
-  createData('Work Experience Based', 4),
-  createData('Case Based', 2),
-  createData('Aptitude and Reasoning Based', 3),
-  createData('Cupcake', 4),
-  createData('Gingerbread', 5),
+  createData('Grammar', 15, 66, 'Need to learn verb tenses'),
+  createData('Pronunciation',7, 9, 'Practice using words in simple sentences first'),
+  createData('Content Structure', 26, 78, 'Use STAR approach'),
+  createData('Vocal Variety', 3, 33, 'Stress on key words'),
+  createData('Filler words', 35, 45, 'Better than last time'),
 ];
 
 function ProgressTable(props) {
@@ -41,8 +41,10 @@ function ProgressTable(props) {
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell>Question Categories</TableCell>
-            <TableCell align="right">Progress</TableCell>
+            <TableCell>Parameters</TableCell>
+            <TableCell align="right">Score</TableCell>
+            <TableCell align="right"> Improvement (%)</TableCell>
+            <TableCell align="right"> Tutor Comments</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -51,8 +53,9 @@ function ProgressTable(props) {
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell align="right">{row.questions}</TableCell>
-
+                <TableCell align="right">{row.number}</TableCell>
+                <TableCell align="right">{row.percent}</TableCell>
+                <TableCell align="right">{row.comments}</TableCell>
             </TableRow>
           ))}
         </TableBody>
