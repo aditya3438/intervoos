@@ -6,7 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 //import "node_modules/video-react/dist/video-react.css"; // import css
-import VoiceRecorder from '../voiceRecorder/voiceRecorder'
+import VoiceRecorder from './voiceRecorder/voiceRecorder'
 // import "~video-react/styles/scss/video-react";
 // import { Player } from 'video-react';
 import ReactPlayer from 'react-player'
