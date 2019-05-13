@@ -6,6 +6,7 @@ import SelectedListItem from '../reusable components/tabList'
 import Grid from '@material-ui/core/Grid';
 // import ProgressTable from '../reusable components/progressTable'
 import ProgressTabView from '../reusable components/progressTabView'
+import InterviewTabs from '../main/interviewTabs'
 
 class Interviews extends Component{
 
@@ -15,7 +16,6 @@ class Interviews extends Component{
             <div>
                 {/* hello Interviews */}
                 {/* <VoiceRecorder /> */}
-                <br/>
                 {/* <LoginButton /> */}
                 <Grid 
                   container
@@ -26,13 +26,11 @@ class Interviews extends Component{
                   style={{ minHeight: '100vh' }}
                 >
                     <Grid item>
+                        <InterviewTabs />
+                    </Grid>
+                    {/* <Grid item>
                         <SelectedListItem />
-                    </Grid>
-                    <Grid item>
-                        {/* <ComplexGrid /> */}
-                        <ProgressTabView />
-
-                    </Grid>
+                    </Grid> */}
                 </Grid>
             </div>
         );
@@ -40,3 +38,8 @@ class Interviews extends Component{
 } 
 
 export default Interviews;
+
+                    // <Grid item>
+                    //     {/* <ComplexGrid /> */}
+                    //     <ProgressTabView />
+                    // </Grid>
