@@ -54,26 +54,6 @@ function ComplexGrid(props) {
                 <ReactPlayer url='https://www.youtube.com/watch?v=Ji46s5BHdr0' />
             {/* </ButtonBase> */}
           </Grid>
-          <Grid item xs={12} sm container>
-            {/* <Grid item xs container direction="column" spacing={16}>
-              <Grid item xs>
-                <Typography gutterBottom variant="subtitle1">
-                  Standard license
-                </Typography>
-                <Typography gutterBottom>Full resolution 1920x1080 • JPEG</Typography>
-                <Typography color="textSecondary">ID: 1030114</Typography>
-              </Grid>
-              <Grid item>
-                <Typography style={{ cursor: 'pointer' }}>Remove</Typography>
-              </Grid>
-            </Grid>
-            <Grid item>
-              <Typography variant="subtitle1">$19.00</Typography>
-            </Grid> */}
-            <Grid item>
-                <VoiceRecorder />
-            </Grid>
-          </Grid>
         </Grid>
       </Paper>
     </div>
