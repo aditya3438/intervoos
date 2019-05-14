@@ -24,7 +24,40 @@ router.post(
     });
 
     newQue.save().then(question => {
-      res.json({ question }).catch(err => res.json(err));
+      res.json(question).catch(err => res.json(err));
     });
   }
 );
+
+router.post(
+  "/notes",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Question.findOne({
+      user: req.user.id
+    }).then(question => {
+      if (!question) {
+        return res.json({
+          question: "No question found"
+        });
+      }
+      if (
+        question.notes.filter(note => note.user.toString() === req.user.id)
+          .length > 0
+      ) {
+        return res
+          .status(400)
+          .json({ notes: "You have already viewed this question" });
+      }
+      question.notes.unshift({
+        user: req.user.id,
+        note: req.body.notes
+      });
+      question.save().then(question => {
+        res.json(question);
+      });
+    });
+  }
+);
+
+module.exports = router;
