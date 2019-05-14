@@ -9,40 +9,25 @@ const keys = require("../config/keys");
 const validateRegisterInput = require("../validation/registration");
 const validateloginInput = require("../validation/login");
 
-const User = require("../models/User");
+const Tutor = require("../models/Tutor");
 
-router.get("/", (req, res) => {
-  res.json({
-    msg: "Test Works"
-  });
-});
-
-router.post("/register", (req, res) => {
+router.post("/tutorregister", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
   //console.log(req.body);
 
   if (isValid) {
     return res.status(400).json(errors);
   }
-  User.findOne({
-    username: req.body.username
-  }).then(user => {
-    if (user) {
-      return res.status(400).json({
-        error: "This Username is already taken"
-      });
-    }
-  });
-  User.findOne({
+  Tutor.findOne({
     email: req.body.email
-  }).then(user => {
-    if (user) {
+  }).then(tutor => {
+    if (tutor) {
       return res.status(400).json({
-        error: "user exists"
+        error: "Tutor exists"
       });
     } else {
       //const avatar =
-      const newUser = new User({
+      const newTutor = new Tutor({
         name: req.body.name,
         username: req.body.username,
         email: req.body.email,
@@ -50,12 +35,12 @@ router.post("/register", (req, res) => {
       });
 
       bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(newUser.password, salt, (err, hash) => {
+        bcrypt.hash(newTutor.password, salt, (err, hash) => {
           if (err) {
             throw err;
           }
-          newUser.password = hash;
-          newUser
+          newTutor.password = hash;
+          newTutor
             .save()
             .then(user => res.json(user))
             .catch(err => console.log(err));
@@ -65,11 +50,11 @@ router.post("/register", (req, res) => {
   });
 });
 
-router.post("/login", (req, res) => {
+router.post("/tutorlogin", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
-  User.findOne({
+  Tutor.findOne({
     email
   }).then(user => {
     const { errors, isValid } = validateloginInput(req.body);
@@ -116,7 +101,7 @@ router.get(
     session: false
   }),
   (req, res) => {
-    console.log(req.user);
+    console.log(req.tutor);
   }
 );
 
