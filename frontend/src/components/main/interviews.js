@@ -23,7 +23,7 @@ class Interviews extends Component{
                   direction="row"
                   justify="center"
                   alignItems="center"
-                  style={{ minHeight: '100vh' }}
+                  style={{ minHeight: '10vh' }}
                 >
                     <Grid item>
                         <InterviewTabs />

@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Link} from 'react-router-dom'
+import {BrowserRouter, Link, Route} from 'react-router-dom'
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -20,6 +20,8 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 //import Tabs from '@material-ui/core/Tabs';
 //import Tab from '@material-ui/core/Tab';
 //import {Link} from 'react-router-dom'
+import LoginButton from '../authentication/loginButton'
+//import LandingPage from '../main/landingPage/landingPage'
 
 const styles = theme => ({
   root: {
@@ -175,8 +177,8 @@ class PageHeader extends React.Component {
                 <MenuIcon />
               </IconButton>
                 <Link to = "/" className ="home">
-                  <Typography className={classes.title} variant="h6" color="default" fontWeight ="" noWrap>
-                    <b>INTERVOOS</b>
+                  <Typography className={classes.title} variant="h6" color="default" fontWeight ="200" noWrap>
+                    <b>Intervoos</b>
                   </Typography>
                 </Link>
               <div className={classes.grow} />
