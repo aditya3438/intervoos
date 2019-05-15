@@ -6,6 +6,7 @@ const passport = require("passport");
 const user = require("./routes/user");
 const profile = require("./routes/profile");
 const question = require("./routes/question");
+const upload = require("./routes/upload");
 
 const app = express();
 
@@ -32,6 +33,7 @@ mongoose
 app.use("/user", user);
 app.use("/profile", profile);
 app.use("/question", question);
+app.use("/upload", upload);
 
 const port = process.env.PORT || 5000;
 
