@@ -9,6 +9,7 @@ import TestPrep from '../main/testprep'
 import ComplexGrid from '../reusable components/mediaPlayerView'
 import VoiceRecorderView from '../reusable components/voiceRecorder/voiceRecorderView';
 import GroupCallView from '../reusable components/videoChats/groupCallView'
+import UserNotesView from '../reusable components/notes/notesView'
 
 
 const styles = {
@@ -52,7 +53,7 @@ class GroupDiscussionTabs extends React.Component {
                   {/* <Route path="/interviews" render={() => <div>Practice Answering Q's for interviews</div>} /> */}
                   <Route path="/gd/learn" component= {ComplexGrid} />
                   <Route path="/gd/practice" component= {GroupCallView} />
-                  <Route path="/gd/notes" component= {TestPrep}  />
+                  <Route path="/gd/notes" component= {UserNotesView}  />
                   {/* <Route exact path="/" render={() => <div>Home</div>} /> */}
                 </Switch>
               </Fragment>

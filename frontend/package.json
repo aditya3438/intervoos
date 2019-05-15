@@ -39,6 +39,7 @@
     "@material-ui/styles": "^4.0.0-beta.1",
     "material-colors": "^1.2.6",
     "nodemon": "^1.19.0",
+    "react-audio-player": "^0.11.0",
     "react-router-dom": "^5.0.0"
   }
 }

@@ -11,6 +11,10 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 // import { Player } from 'video-react';
 //import ReactPlayer from 'react-player'
 //import QuestionStepper from './questionStepper'
+import Assessment from './assess'
+import ReactAudioPlayer from 'react-audio-player';
+
+
 
 const styles = theme => ({
   root: {
@@ -33,17 +37,22 @@ const styles = theme => ({
   },
 });
 
-function GroupCallView(props) {
+function AssessView(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <Grid container spacing={16}>
-          {/* <Grid item xs={12} sm container>
-            <QuestionStepper />
-          </Grid> */}
+          <Grid item xs={12} sm container>
+            <ReactAudioPlayer
+                src="audiosample.wav"
+                autoPlay
+                controls
+            />
+          </Grid>
           <Grid item>
-              <img className={classes.img} alt="" src= "http://cache.gawkerassets.com/assets/images/4/2010/09/skypeskype.jpg" />
+              {/* <img className={classes.img} alt="complex" src="https://tech.rochester.edu/wp-content/uploads/2015/07/skype-windows-video-call.png" /> */}
+              <Assessment />
           </Grid>
         </Grid>
       </Paper>
@@ -51,8 +60,8 @@ function GroupCallView(props) {
   );
 }
 
-GroupCallView.propTypes = {
+AssessView.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(GroupCallView);
+export default withStyles(styles)(AssessView);

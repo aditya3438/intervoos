@@ -10,6 +10,7 @@ import ComplexGrid from '../reusable components/mediaPlayerView'
 import VoiceRecorderView from '../reusable components/voiceRecorder/voiceRecorderView';
 import VideoCallView from '../reusable components/videoChats/videoCallView'
 import ProgressTabView from '../reusable components/progressTabView'
+import AssessView from '../reusable components/assessments/assessView'
 
 const styles = {
   root: {
@@ -45,16 +46,16 @@ class TestPrepTabs extends React.Component {
                   >
                     <Tab label="Learn" component={Link} to="/testprep/learn" />
                     <Tab label="Practice" component={Link} to="/testprep/practice" />
+                    <Tab label="Assessment" component ={Link} to ="/testprep/assess" />
                     <Tab label="Progress" component ={Link} to ="/testprep/progress" />
-                    <Tab label="Notes" component ={Link} to ="/testprep/notes" />
                   </Tabs>
                 </Paper>
                 <Switch>
                   {/* <Route path="/interviews" render={() => <div>Practice Answering Q's for interviews</div>} /> */}
                   <Route path="/testprep/learn" component= {ComplexGrid} />
                   <Route path="/testprep/practice" component= {VideoCallView} />
+                  <Route path="/testprep/assess" component= {AssessView}  />
                   <Route path="/testprep/progress" component= {ProgressTabView} />
-                  <Route path="/testprep/notes" component= {TestPrep}  />
                   {/* <Route exact path="/" render={() => <div>Home</div>} /> */}
                 </Switch>
               </Fragment>
