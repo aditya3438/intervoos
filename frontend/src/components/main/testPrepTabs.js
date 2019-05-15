@@ -9,7 +9,7 @@ import TestPrep from '../main/testprep'
 import ComplexGrid from '../reusable components/mediaPlayerView'
 import VoiceRecorderView from '../reusable components/voiceRecorder/voiceRecorderView';
 import VideoCallView from '../reusable components/videoChats/videoCallView'
-
+import ProgressTabView from '../reusable components/progressTabView'
 
 const styles = {
   root: {
@@ -53,7 +53,7 @@ class TestPrepTabs extends React.Component {
                   {/* <Route path="/interviews" render={() => <div>Practice Answering Q's for interviews</div>} /> */}
                   <Route path="/testprep/learn" component= {ComplexGrid} />
                   <Route path="/testprep/practice" component= {VideoCallView} />
-                  <Route path="/testprep/progress" component= {VideoCallView} />
+                  <Route path="/testprep/progress" component= {ProgressTabView} />
                   <Route path="/testprep/notes" component= {TestPrep}  />
                   {/* <Route exact path="/" render={() => <div>Home</div>} /> */}
                 </Switch>

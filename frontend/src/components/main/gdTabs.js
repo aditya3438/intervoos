@@ -8,6 +8,7 @@ import Tab from '@material-ui/core/Tab';
 import TestPrep from '../main/testprep'
 import ComplexGrid from '../reusable components/mediaPlayerView'
 import VoiceRecorderView from '../reusable components/voiceRecorder/voiceRecorderView';
+import GroupCallView from '../reusable components/videoChats/groupCallView'
 
 
 const styles = {
@@ -50,7 +51,7 @@ class GroupDiscussionTabs extends React.Component {
                 <Switch>
                   {/* <Route path="/interviews" render={() => <div>Practice Answering Q's for interviews</div>} /> */}
                   <Route path="/gd/learn" component= {ComplexGrid} />
-                  <Route path="/gd/practice" component= {VoiceRecorderView} />
+                  <Route path="/gd/practice" component= {GroupCallView} />
                   <Route path="/gd/notes" component= {TestPrep}  />
                   {/* <Route exact path="/" render={() => <div>Home</div>} /> */}
                 </Switch>
