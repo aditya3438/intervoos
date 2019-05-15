@@ -9,6 +9,7 @@ import TestPrep from '../main/testprep'
 import ComplexGrid from '../reusable components/mediaPlayerView'
 import VoiceRecorderView from '../reusable components/voiceRecorder/voiceRecorderView';
 import VideoCallView from '../reusable components/videoChats/videoCallView'
+import UserNotesView from '../reusable components/notes/notesView'
 
 
 const styles = {
@@ -52,7 +53,7 @@ class StrangerTabs extends React.Component {
                   {/* <Route path="/interviews" render={() => <div>Practice Answering Q's for interviews</div>} /> */}
                   <Route path="/stranger/learn" component= {ComplexGrid} />
                   <Route path="/stranger/practice" component= {VideoCallView} />
-                  <Route path="/stranger/notes" component= {TestPrep}  />
+                  <Route path="/stranger/notes" component= {UserNotesView}  />
                   {/* <Route exact path="/" render={() => <div>Home</div>} /> */}
                 </Switch>
               </Fragment>

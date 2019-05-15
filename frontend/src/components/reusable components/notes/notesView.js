@@ -5,12 +5,8 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
-//import "node_modules/video-react/dist/video-react.css"; // import css
-//import VoiceRecorder from './voiceRecorder/voiceRecorder'
-// import "~video-react/styles/scss/video-react";
-// import { Player } from 'video-react';
-//import ReactPlayer from 'react-player'
-//import QuestionStepper from './questionStepper'
+import QuestionStepper from '../questionStepper'
+import UserNotes from '../notes/notes'
 
 const styles = theme => ({
   root: {
@@ -33,17 +29,17 @@ const styles = theme => ({
   },
 });
 
-function GroupCallView(props) {
+function UserNotesView(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <Grid container spacing={16}>
-          {/* <Grid item xs={12} sm container>
+          <Grid item xs={12} sm container>
             <QuestionStepper />
-          </Grid> */}
+          </Grid>
           <Grid item>
-              <img className={classes.img} alt="" src= "http://cache.gawkerassets.com/assets/images/4/2010/09/skypeskype.jpg" />
+              <UserNotes />
           </Grid>
         </Grid>
       </Paper>
@@ -51,8 +47,8 @@ function GroupCallView(props) {
   );
 }
 
-GroupCallView.propTypes = {
+UserNotesView.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(GroupCallView);
+export default withStyles(styles)(UserNotesView);
