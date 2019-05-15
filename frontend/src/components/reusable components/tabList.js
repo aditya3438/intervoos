@@ -35,7 +35,7 @@ class SelectedListItem extends React.Component {
             selected={this.state.selectedIndex === 1}
             onClick={event => this.handleListItemClick(event, 1)}
           >
-            <ListItemText primary="Practice" />
+            <ListItemText primary="Learn" />
           </ListItem>
           <Divider />
           <ListItem
@@ -43,7 +43,7 @@ class SelectedListItem extends React.Component {
             selected={this.state.selectedIndex === 2}
             onClick={event => this.handleListItemClick(event, 2)}
           >
-            <ListItemText primary="Learn" />
+            <ListItemText primary="Practice" />
           </ListItem>
           <Divider />
           <ListItem

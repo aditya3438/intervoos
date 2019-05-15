@@ -6,6 +6,8 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import AnswerFields from './answerFIelds/answerFIelds'
+import TextFields from './answerFIelds/textFields'
 
 const styles = theme => ({
   root: {
@@ -23,30 +25,27 @@ function Assessment(props) {
     <div className={classes.root}>
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>Expansion Panel 1</Typography>
+          <Typography className={classes.heading}>Q.1 Float is shaped like a …………………  </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
-          </Typography>
+            <TextFields />
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>Expansion Panel 2</Typography>
+          <Typography className={classes.heading}>Q.2 Scientists from …………………… have worked on the project so far </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
-          </Typography>
+            <TextFields />
         </ExpansionPanelDetails>
       </ExpansionPanel>
-      <ExpansionPanel disabled>
+      <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>Disabled Expansion Panel</Typography>
+          <Typography className={classes.heading}>Q.3 By …………………… the war was firmly in control of the axis powers </Typography>
         </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
+            <AnswerFields />
+        </ExpansionPanelDetails>
       </ExpansionPanel>
     </div>
   );

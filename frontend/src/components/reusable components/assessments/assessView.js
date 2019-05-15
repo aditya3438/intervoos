@@ -13,6 +13,10 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 //import QuestionStepper from './questionStepper'
 import Assessment from './assess'
 import ReactAudioPlayer from 'react-audio-player';
+// import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+// import ExpansionPanelActions from '@material-ui/core/ExpansionPanelActions';
+import Button from '@material-ui/core/Button';
+import Divider from '@material-ui/core/Divider';
 
 
 
@@ -53,6 +57,11 @@ function AssessView(props) {
           <Grid item>
               {/* <img className={classes.img} alt="complex" src="https://tech.rochester.edu/wp-content/uploads/2015/07/skype-windows-video-call.png" /> */}
               <Assessment />
+          </Grid>
+          <Divider />
+          <Grid item>
+                <Button size="small" color="secondary">Cancel</Button>
+                <Button size="small" color="primary" >Submit</Button>
           </Grid>
         </Grid>
       </Paper>

@@ -10,7 +10,6 @@ class HomePage extends Component {
 
             <div>
               {/* <Button variant="contained" color="primary">Hello</Button> */}
-              <PageHeader />
               <CenteredTabs />
             </div>
           );
