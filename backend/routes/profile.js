@@ -30,4 +30,23 @@ router.get(
   }
 );
 
+//create and update user profile
+router.post(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Profile.findOne({ user: req.user.id }).then(profile => {
+      const newExp = {
+        jobtitle: req.body.jobtitle,
+        company: req.body.company,
+        description: req.body.description
+      };
+      Profile.experience.unshift(newExp);
+      Profile.save().then(profile => {
+        res.json(profile);
+      });
+    });
+  }
+);
+
 module.exports = router;
