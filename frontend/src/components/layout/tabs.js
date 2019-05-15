@@ -9,20 +9,31 @@ import Interviews from "../main/interviews"
 import GroupDiscussion from '../main/gd'
 import Stranger from '../main/stranger'
 import TestPrep from '../main/testprep'
+import LoginForm from '../authentication/loginForm'
+import LandingPage from '../main/landingPage/landingPage'
 
 const styles = {
   root: {
     flexGrow: 1,
   },
+
+  headline: {
+    fontSize: 24,
+    paddingTop: 16,
+    marginBottom: 12,
+    fontWeight: 400,
+  }
 };
 
 class CenteredTabs extends React.Component {
   state = {
-    value: 0,
+    value: 'a',
   };
 
-  handleChange = (event, value) => {
-    this.setState({ value });
+  handleChange = (value) => {
+    this.setState({
+      value: value,
+    });
   };
 
   render() {
@@ -36,21 +47,22 @@ class CenteredTabs extends React.Component {
             render={({ location }) => (
               <Fragment>
                 <Paper>
-                  <Tabs value={location.pathname}
+                  <Tabs value={this.state.value}
                   onChange={this.handleChange}
                   indicatorColor="primary"
                   textColor="primary"
                   centered
                   >
-                    <Tab label="Interviews" component={Link} to="/interviews" />
-                    <Tab label="GD's" component={Link} to="/gd" />
+                    <Tab label="Interviews" value ="a" component={Link} to="/interviews" />
+                    <Tab label="GD's" value ="b"component={Link} to="/gd" />
                     <Tab
                       label="Talk to Strangers"
+                      value ="c"
                       href="#basic-tabs"
                       component={Link}
                       to="/stranger"
                     />
-                    <Tab label="Test Prep" component ={Link} to ="/testprep" />
+                    <Tab label="Test Prep" value ="d" component ={Link} to ="/testprep" />
                   </Tabs>
                 </Paper>
                 <Switch>
@@ -59,7 +71,9 @@ class CenteredTabs extends React.Component {
                   <Route path="/gd" component= {GroupDiscussion} />
                   <Route path="/stranger" component= {Stranger} />
                   <Route path="/testprep" component= {TestPrep}  />
-                  <Route exact path="/" render={() => <div>Home</div>} />
+                  {/* <Route exact path="/" render={() => <div>Home</div>} /> */}
+                  <Route exact path="/" component= {LandingPage} />
+                  <Route path='/login' component={LoginForm} />
                 </Switch>
               </Fragment>
             )}
