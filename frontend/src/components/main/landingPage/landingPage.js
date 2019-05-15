@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import Button from '@material-ui/core/Button';
+import UserProfile from '../../profiles/userProfile'
 
 
 const styles = theme => ({
@@ -66,6 +67,9 @@ const styles = theme => ({
                     <b>Intervoos</b> is there with you every step of the way to take your communications skills to the next level.
                   </Typography>
                 </div>
+              </Grid>
+              <Grid item>
+                <UserProfile />
               </Grid>
             </Grid>
           </Paper>

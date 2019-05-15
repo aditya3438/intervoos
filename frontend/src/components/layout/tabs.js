@@ -10,7 +10,8 @@ import GroupDiscussion from '../main/gd'
 import Stranger from '../main/stranger'
 import TestPrep from '../main/testprep'
 import LoginForm from '../authentication/loginForm'
-import LandingPage from '../main/landingPage/landingPage'
+import LandingPage from '../main/landingPage/landingPage';
+import PageHeader from './header'
 
 const styles = {
   root: {
@@ -30,7 +31,8 @@ class CenteredTabs extends React.Component {
     value: 'a',
   };
 
-  handleChange = (value) => {
+  handleChange = (event, value) => {
+    console.log("%%%%%%%%%%%%", value)
     this.setState({
       value: value,
     });
@@ -42,6 +44,7 @@ class CenteredTabs extends React.Component {
     return (
       <BrowserRouter>
         <div className="App">
+        <PageHeader />
           <Route
             path="/"
             render={({ location }) => (
@@ -54,7 +57,8 @@ class CenteredTabs extends React.Component {
                   centered
                   >
                     <Tab label="Interviews" value ="a" component={Link} to="/interviews" />
-                    <Tab label="GD's" value ="b"component={Link} to="/gd" />
+                    <Tab label="GD's" value ="b" component={Link} to="/gd" />
+                    
                     <Tab
                       label="Talk to Strangers"
                       value ="c"
