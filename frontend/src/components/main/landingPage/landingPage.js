@@ -61,8 +61,9 @@ const styles = theme => ({
                     <b>Intervoos</b> is your personal speaking coach
                   </Typography>
                   <Typography variant="h5" color="inherit" paragraph>
-                    <center>Multiple lines of text that form the lede, informing new readers quickly and
-                    efficiently about what's most interesting in this post&apos;s contents…</center>
+                    Whether its preparing for a job or college interview, practicing for a test like IELTS or speech or, 
+                    more importantly, overcoming your fear of public speaking and talking to strangers and improving your confidence,
+                    <b>Intervoos</b> is there with you every step of the way to take your communications skills to the next level.
                   </Typography>
                 </div>
               </Grid>
