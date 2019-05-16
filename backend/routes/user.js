@@ -68,12 +68,13 @@ router.post("/register", (req, res) => {
 router.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
-
   User.findOne({
     email
   }).then(user => {
+    console.log("IVDSVD", user)
     const { errors, isValid } = validateloginInput(req.body);
-    if (isValid) {
+    console.log("fnkdlsanfs", errors, isValid)
+    if (!isValid) {
       return res.status(400).json(errors);
     }
 
@@ -81,8 +82,8 @@ router.post("/login", (req, res) => {
       errors.email = "email not found";
       return res.status(400).json(errors);
     }
-
-    bcrypt.compare(password, user.password).then(isMatch => {
+    bcrypt.compare(password, user.password).then((isMatch) => {
+      console.log("Gdfvfd", isMatch)
       if (isMatch) {
         const payload = {
           id: user.id,
@@ -97,11 +98,13 @@ router.post("/login", (req, res) => {
           (err, token) => {
             res.json({
               success: true,
-              token: "Bearer " + token
+              token: token,
+              user,
             });
           }
         );
       } else {
+        console.log("Error")
         return res.status(400).json({
           password: "password incorrect"
         });

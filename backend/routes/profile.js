@@ -7,9 +7,7 @@ const Profile = require("../models/Profile");
 const User = require("../models/User");
 
 router.get("/test", (req, res) => {
-  res.json({
-    msg: "profile is running"
-  });
+  res.json("Hello");
 });
 
 //get current users profile

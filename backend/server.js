@@ -8,8 +8,10 @@ const profile = require("./routes/profile");
 const question = require("./routes/question");
 const upload = require("./routes/upload");
 
-const app = express();
+const cors = require('cors');
 
+const app = express();
+app.use(cors());
 app.use(
   bodyParser.urlencoded({
     extended: false
