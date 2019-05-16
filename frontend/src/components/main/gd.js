@@ -41,7 +41,7 @@ class GroupDiscussion extends Component{
                     </Grid>
                 </Grid>
                 <br/>
-                <LoginButton />
+                {/* <LoginButton /> */}
             </div>
             
                 // <div>

@@ -20,7 +20,7 @@ const styles = {
 
 class GroupDiscussionTabs extends React.Component {
   state = {
-    value: 0,
+    value: 'a',
   };
 
   handleChange = (event, value) => {
@@ -38,15 +38,15 @@ class GroupDiscussionTabs extends React.Component {
             render={({ location }) => (
               <Fragment>
                 <Paper>
-                  <Tabs value={location.pathname}
+                  <Tabs value={this.state.value}
                   onChange={this.handleChange}
                   indicatorColor="primary"
                   textColor="primary"
                   centered
                   >
-                    <Tab label="Learn" component={Link} to="/gd/learn" />
-                    <Tab label="Practice" component={Link} to="/gd/practice" />
-                    <Tab label="Notes" component ={Link} to ="/gd/notes" />
+                    <Tab label="Learn" value="a"component={Link} to="/gd/learn" />
+                    <Tab label="Practice"value="b" component={Link} to="/gd/practice" />
+                    <Tab label="Notes" value="c"component ={Link} to ="/gd/notes" />
                   </Tabs>
                 </Paper>
                 <Switch>

@@ -11,6 +11,7 @@ import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import Button from '@material-ui/core/Button';
 import UserProfile from '../../profiles/userProfile'
+import LoginButton from  '../../authentication/loginButton'
 
 
 const styles = theme => ({
@@ -56,28 +57,26 @@ const styles = theme => ({
           {/* Main featured post */}
           <Paper className={classes.mainFeaturedPost}>
             <Grid container>
-              <Grid item md={6}>
+              <Grid item md={12}>
                 <div className={classes.mainFeaturedPostContent}>
-                  <Typography component="h1" variant="h3" color="inherit" gutterBottom>
+                  <Typography component="h1" align="center" variant="h3" color="inherit" gutterBottom>
                     <b>Intervoos</b> is your personal speaking coach
                   </Typography>
-                  <Typography variant="h5" color="inherit" paragraph>
-                    Whether its preparing for a job or college interview, practicing for a test like IELTS or speech or, 
-                    more importantly, overcoming your fear of public speaking and talking to strangers and improving your confidence,
-                    <b>Intervoos</b> is there with you every step of the way to take your communications skills to the next level.
+                  <Typography variant="h5" align="center" color="inherit" paragraph>
+                    Whether its preparing for a job or college interview, practicing for a test like IELTS, giving a speech or, 
+                    more importantly, overcoming your fear of public speaking and talking to strangers,  
+                    <b>Intervoos</b> is there with you every step of the way to take your communications skills and your confidence to the next level.
                   </Typography>
                 </div>
               </Grid>
-              <Grid item>
-                <UserProfile />
-              </Grid>
             </Grid>
           </Paper>
+          <LoginButton />
         </main>
       {/* Footer */}
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom>
-          Intervoos
+          <b>Intervoos</b>
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
           Made with SOAL

@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import { unstable_Box as Box } from '@material-ui/core/Box';
 import { shadows } from '@material-ui/system';
 import { Typography } from '@material-ui/core';
-import LoginButton from  '../authentication/loginButton'
+// import LoginButton from  '../authentication/loginButton'
 import StrangerTabs from '../main/strangerTabs'
 
 class Stranger extends Component{
@@ -42,7 +42,7 @@ class Stranger extends Component{
                     </Grid>
                 </Grid>
                 <br/>
-                <LoginButton />
+                {/* <LoginButton /> */}
             </div>
             
                 // <div>

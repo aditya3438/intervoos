@@ -9,6 +9,7 @@ import TestPrep from '../main/testprep'
 import ComplexGrid from '../reusable components/mediaPlayerView'
 import VoiceRecorderView from '../reusable components/voiceRecorder/voiceRecorderView';
 import ProgressTabView from '../reusable components/progressTabView'
+import UserNotesView from '../reusable components/notes/notesView'
 
 const styles = {
   root: {
@@ -18,7 +19,7 @@ const styles = {
 
 class InterviewTabs extends React.Component {
   state = {
-    value: 0,
+    value: 'a',
   };
 
   handleChange = (event, value) => {
@@ -36,21 +37,22 @@ class InterviewTabs extends React.Component {
             render={({ location }) => (
               <Fragment>
                 <Paper>
-                  <Tabs value={location.pathname}
+                  <Tabs value={this.state.value}
                   onChange={this.handleChange}
                   indicatorColor="primary"
                   textColor="primary"
                   centered
                   >
-                    <Tab label="Learn" component={Link} to="/interviews/learn" />
-                    <Tab label="Practice" component={Link} to="/interviews/practice" />
+                    <Tab label="Learn" value="a" component={Link} to="/interviews/learn" />
+                    <Tab label="Practice" value="b" component={Link} to="/interviews/practice" />
                     <Tab
                       label="Progress"
+                      value="c"
                       href="#basic-tabs"
                       component={Link}
                       to="/interviews/progress"
                     />
-                    <Tab label="Notes" component ={Link} to ="/interviews/notes" />
+                    <Tab label="Notes" value="d"component ={Link} to ="/interviews/notes" />
                   </Tabs>
                 </Paper>
                 <Switch>
@@ -58,7 +60,7 @@ class InterviewTabs extends React.Component {
                   <Route path="/interviews/learn" component= {ComplexGrid} />
                   <Route path="/interviews/practice" component= {VoiceRecorderView} />
                   <Route path="/interviews/progress" component= {ProgressTabView} />
-                  <Route path="/interviews/notes" component= {TestPrep}  />
+                  <Route path="/interviews/notes" component= {UserNotesView}  />
                   <Route exact path="/" render={() => <div>Home</div>} />
                 </Switch>
               </Fragment>

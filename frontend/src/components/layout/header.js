@@ -21,6 +21,7 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 //import Tab from '@material-ui/core/Tab';
 //import {Link} from 'react-router-dom'
 import LoginButton from '../authentication/loginButton'
+import { fontWeight } from '@material-ui/system/typography';
 //import LandingPage from '../main/landingPage/landingPage'
 
 const styles = theme => ({
@@ -173,12 +174,12 @@ class PageHeader extends React.Component {
         <div className={classes.root}>
           <AppBar position="static">
             <Toolbar>
-              <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
+              {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
                 <MenuIcon />
-              </IconButton>
+              </IconButton> */}
                 <Link to = "/" className ="home" style={{textDecoration: "none"}}>
                   {/* <Typography className={classes.title} variant="h6" color="white" fontWeight ="200" noWrap> */}
-                    <div style={{color: 'white', fontSize: "22px"}}>
+                    <div style={{color: 'white', fontSize: "36px", fontWeight:"bold"}}>
                       Intervoos
                     </div>
                   {/* </Typography> */}

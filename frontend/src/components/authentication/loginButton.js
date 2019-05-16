@@ -17,6 +17,7 @@ class LoginButton extends Component{
                             }}
                         variant="contained"
                         component={Link} to="/login"
+                        onClick={this.props.handleLogin}
                     >
                         Login
                     </Button>

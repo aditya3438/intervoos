@@ -20,7 +20,7 @@ const styles = {
 
 class TestPrepTabs extends React.Component {
   state = {
-    value: 0,
+    value: 'a',
   };
 
   handleChange = (event, value) => {
@@ -38,16 +38,16 @@ class TestPrepTabs extends React.Component {
             render={({ location }) => (
               <Fragment>
                 <Paper>
-                  <Tabs value={location.pathname}
+                  <Tabs value={this.state.value}
                   onChange={this.handleChange}
                   indicatorColor="primary"
                   textColor="primary"
                   centered
                   >
-                    <Tab label="Learn" component={Link} to="/testprep/learn" />
-                    <Tab label="Practice" component={Link} to="/testprep/practice" />
-                    <Tab label="Assessment" component ={Link} to ="/testprep/assess" />
-                    <Tab label="Progress" component ={Link} to ="/testprep/progress" />
+                    <Tab label="Learn" value="a"component={Link} to="/testprep/learn" />
+                    <Tab label="Practice" value="b"component={Link} to="/testprep/practice" />
+                    <Tab label="Assessment" value="c"component ={Link} to ="/testprep/assess" />
+                    <Tab label="Progress" value="d"component ={Link} to ="/testprep/progress" />
                   </Tabs>
                 </Paper>
                 <Switch>
